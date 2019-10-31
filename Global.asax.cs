@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Test_educational_MVC_EP.Models;
 
 namespace Test_educational_MVC_EP
 {
@@ -12,6 +14,8 @@ namespace Test_educational_MVC_EP
     {
         protected void Application_Start()
         {
+            Database.SetInitializer(new BookDbInitializer()); // Вызываем каждый раз при запуске приложения.и создается бд. товарами
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -13,10 +13,11 @@ namespace Test_educational_MVC_EP
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //контроллер по умолчанию
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{controller}/{action}/{id}", //имя конторолера, действие, id
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional } //зачения по умолчанию. Если ни каких параметров нет
             );
         }
     }
