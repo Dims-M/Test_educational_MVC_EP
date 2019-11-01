@@ -3,5 +3,20 @@
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
+<div>
+    <p>Используйте эту область для предоставления дополнительной информации.</p>
 
-<p>Use this area to provide additional information.</p>
+    @foreach (var b in ViewBag.Cars)
+    {
+        <tr>
+            <td><p>@b.Name</p>
+            <td />
+            <td><p>@b.Price</p>
+            <td />
+            <td><p>@b.available</p>
+            <td />
+        </tr>
+
+    }
+
+</div>

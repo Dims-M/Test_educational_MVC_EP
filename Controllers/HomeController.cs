@@ -15,6 +15,7 @@ namespace Test_educational_MVC_EP.Controllers
         //Для ввывода данных из БД нужен контекст БД
         //
         BookContext bd = new BookContext();
+        ShopContext bd2 = new ShopContext();
         public ActionResult Index()
         {
             var books = bd.Books; // присоединение к конкретной бд
@@ -26,7 +27,9 @@ namespace Test_educational_MVC_EP.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            var cars = bd2.Cars; // присвоеваем подключение контроллеру
+            ViewBag.Cars = cars;
+            ViewBag.Message = "Страница описания вашего приложения.";
 
             return View();
         }
