@@ -6,7 +6,6 @@
     <h3>Распродажа книг</h3>
     <table>
         <tr>
-            
             <td><p>Название книги&nbsp;</p></td>
             <td><p>Автор&nbsp;</p></td>
             <td><p>Цена&nbsp;</p></td>
@@ -14,15 +13,14 @@
         @foreach (var b in ViewBag.Books)
         {
             <tr>
-                <td><p>@b.Name</p><td/>
-                <td><p>@b.Autor</p><td/>
-                <td><p>@b.Price</p><td/>
+                <td><p>@b.Name</p></td>
+                <td><p>@b.Autor&nbsp;</p></td>
+                <td><p>@b.Price</p></td>
+                <td><p><a href="/Home/Buy/@b.ID">Купить книгу</a></p></td>
             </tr>
 
          }
 
-
         </table>
-
 
 </div>
