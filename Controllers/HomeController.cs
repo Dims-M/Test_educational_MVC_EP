@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Test_educational_MVC_EP.Models;
 
-
+//https://www.youtube.com/watch?v=F7rhqyphToQ&list=PLL-k0Ff5RfqXnwdDG61WqZ2j3KXUPnfmq&index=9&t=510s
 //https://www.youtube.com/watch?v=o5o2jW-o5PY&list=PLL-k0Ff5RfqXnwdDG61WqZ2j3KXUPnfmq&index=6&t=230s
 namespace Test_educational_MVC_EP.Controllers
 {
@@ -32,6 +32,7 @@ namespace Test_educational_MVC_EP.Controllers
         /// </summary>
         /// <param name="id">Параметр ID нужной книги</param>
         /// <returns>возращает вьюху</returns>
+        [HttpGet]
         public ActionResult Buy(int? id)
         {
             ViewBag.BookId = id; //
@@ -41,7 +42,7 @@ namespace Test_educational_MVC_EP.Controllers
         /// <summary>
         /// Метод Byu покупки с заполненым параметром
         /// </summary>
-        /// <param name="purchase">заполненый параметр из вьюхи</param>
+        /// <param name="purchase">заполненый параметр из вьюхи Buy. Где вводим данне при заказе.</param>
         /// <returns></returns>
         [HttpPost]
         public string Buy(Purchase purchase)
