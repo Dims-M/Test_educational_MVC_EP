@@ -56,6 +56,9 @@ namespace Test_educational_MVC_EP.Controllers
            return $"Cпасибо {purchase.Person}, за покупку книги";
         }
 
+        //тестовой метод гет id
+
+
         public ActionResult About()
         {
             var cars = bd2.Cars; // присвоеваем подключение контроллеру
