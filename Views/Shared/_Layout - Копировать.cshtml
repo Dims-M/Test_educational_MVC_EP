@@ -29,20 +29,10 @@
         </div>
     </div>
     <div class="container body-content">
-        @RenderBody()
-
+        @RenderBody() //МЕСТО вставки вьюхи
         <hr />
         <footer>
-
-            @if (IsSectionDefined("Footer"))
-            {
-                @RenderSection("Footer")
-            }
-            else
-            {
-                <p>&copy; @DateTime.Now.Year - мое приложение ASP.NET</p>
-            }
-
+            <p>&copy; @DateTime.Now.Year - мое приложение ASP.NET</p>
         </footer>
     </div>
 

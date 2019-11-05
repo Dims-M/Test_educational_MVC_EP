@@ -14,7 +14,7 @@ namespace Test_educational_MVC_EP
     {
         protected void Application_Start()
         {
-           // Database.SetInitializer(new BookDbInitializer()); // Вызываем каждый раз при запуске приложения.и создается бд. товарами
+            //Database.SetInitializer(new BookDbInitializer()); // Вызываем каждый раз при запуске приложения.и создается бд. товарами
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

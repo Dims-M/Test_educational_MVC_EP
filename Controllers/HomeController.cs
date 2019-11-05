@@ -21,7 +21,7 @@ namespace Test_educational_MVC_EP.Controllers
         public ActionResult Index()
         {
             var books = bd.Books; // присоединение к конкретной бд
-           //  Обьект ViewBag может хранить в себе любые переменные
+                                  //  Обьект ViewBag может хранить в себе любые переменные
             ViewBag.Books = books;
             return View();
 
@@ -44,7 +44,7 @@ namespace Test_educational_MVC_EP.Controllers
         /// </summary>
         /// <param name="purchase">заполненый параметр из вьюхи Buy. Где вводим данне при заказе.</param>
         /// <returns></returns>
-        [HttpPost]
+        [HttpPost] //срабатывает когда мы отправляем запрос к серверу
         public string Buy(Purchase purchase)
         {
             purchase.Date = DateTime.Now;
@@ -53,7 +53,7 @@ namespace Test_educational_MVC_EP.Controllers
 
             bd.SaveChanges();
 
-           return $"Cпасибо {purchase.Person}, за покупку книги";
+            return $"Cпасибо {purchase.Person}, за заказ нашей книги";
         }
 
         //тестовой метод гет id
@@ -65,14 +65,32 @@ namespace Test_educational_MVC_EP.Controllers
             ViewBag.Cars = cars;
             ViewBag.Message = "Страница описания вашего приложения.";
 
-            return View();
+            return View("Contact");
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Наши контакты.";
 
             return View();
         }
+
+
+        //Тестрой метод дя переадрисации
+        public ActionResult GetVoid(int id =1)
+        {
+            if (id >2)
+            {
+                return Redirect("/Home/Contact");
+                // return Redirect("/Home/Plug");
+            }
+            else
+            {
+               // return Redirect("/Home/Index");
+                return View("/Home/Plug");
+            }
+
+        }
+
     }
 }
