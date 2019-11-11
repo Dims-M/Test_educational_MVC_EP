@@ -77,20 +77,29 @@ namespace Test_educational_MVC_EP.Controllers
 
 
         //Тестрой метод дя переадрисации
-        public ActionResult GetVoid(int id =1)
+        public ActionResult GetVoid(int id = 1)
         {
-            if (id >2)
+            if (id > 2)
             {
                 return Redirect("/Home/Contact");
                 // return Redirect("/Home/Plug");
             }
             else
             {
-               // return Redirect("/Home/Index");
+                // return Redirect("/Home/Index");
+                //https://www.youtube.com/watch?v=PYpnT_7hKP0&list=PLL-k0Ff5RfqXnwdDG61WqZ2j3KXUPnfmq&index=24
                 return View("/Home/Plug");
             }
 
         }
+
+
+        public ActionResult GetDateDB(int id = 1)
+        {
+
+            return View("/Home/Plug");
+        }
+
 
     }
 }

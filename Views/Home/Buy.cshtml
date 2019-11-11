@@ -3,6 +3,7 @@
     ViewBag.Title = "Покупка книги";
 }
 
+
     <div>
 
         <h3>Для покупки заполните все поля!!</h3>
@@ -10,8 +11,10 @@
             <input type="hidden" value="@ViewBag.BookId" />
             <table>
                 <tr>
-                    <td><p>Введите свое имя</p></td>
-                    <td><input type="text" name="Person" /></td>
+                    @*<td><p>Введите свое имя</p></td>*@
+                    <td><p>@Html.Label("Person", "Введите свое имя")</p></td>
+                    <td>@Html.TextBox("Person", "Ведите имя")</td>
+                    @*<td><input type="text" name="Person" /></td>*@
                 </tr>
 
                 <tr>
