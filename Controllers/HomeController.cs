@@ -58,7 +58,18 @@ namespace Test_educational_MVC_EP.Controllers
 
         //тестовой метод гет id
 
+        [HttpGet] //получаем форму для добавления новой книги.
+        public ActionResult Create()
+        {
+            return View(); //отправляем в браузер форму(представлене)
+        }
 
+        [HttpPost] //отправляем готовую форму с данными новой книги.
+        public ActionResult Create(Book book)
+        {
+            bd.Books.Add(book); //записываев в БД новую книгу
+            return RedirectToAction("Index"); //переодрисация на главную страницу
+        }
         public ActionResult About()
         {
             var cars = bd2.Cars; // присвоеваем подключение контроллеру

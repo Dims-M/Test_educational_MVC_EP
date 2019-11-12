@@ -1,0 +1,27 @@
+﻿@model Test_educational_MVC_EP.Models.Book
+
+@{
+    ViewBag.Title = "Создание новой книги ";
+}
+
+<h2>Добавление новой книги</h2>
+
+@*Форма для создания нового экземпляра книги.*@
+@using (Html.BeginForm())
+{
+
+    @Html.LabelFor(model => model.Name, "Название книги") @*//набпись новой книги*@
+    <br />
+    @Html.EditorFor(model => model.Name) @*//Форма ввода названия новой книги*@
+    <br />
+    @Html.LabelFor(model => model.Autor, "Автор")
+    <br />
+    @Html.EditorFor(model => model.Autor)
+    <br />
+    @Html.LabelFor(model => model.Price, "Цена")
+    <br />
+    @Html.EditorFor(model => model.Price)
+    <br /><br />
+    <input type="submit" value="Добавить" /> @*//кнопка отправить в контроллер по  [HttpPost]*@
+    @*<input href="/Home/" value="Вернутся" /> @*//кнопка отправить в контроллер по  [HttpPost]*@
+}
