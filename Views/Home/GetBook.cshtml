@@ -1,0 +1,12 @@
+﻿@model Test_educational_MVC_EP.Models.Book
+
+@{
+    ViewBag.Title = "Книга";
+}
+
+<h2>Ваш результат</h2>
+@ViewBag.Temp
+
+<h4>Название произведения: @Html.Display("Name")</h4>
+<h3>Автор: @Html.Display("Autor")</h3>
+<h2>Цена: @Html.Display("Price")</h2>

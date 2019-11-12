@@ -72,7 +72,7 @@ namespace Test_educational_MVC_EP.Controllers
         {
             ViewBag.Message = "Наши контакты.";
 
-            return View();
+            return View(bd.Books.ToList());
         }
 
 
@@ -92,14 +92,36 @@ namespace Test_educational_MVC_EP.Controllers
             }
 
         }
-
-
-        public ActionResult GetDateDB(int id = 1)
+        ///Home/GetDateDB
+        /// <summary>
+        /// Работа с БД
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult GetDateDB()
         {
 
             return View("/Home/Plug");
         }
 
+       // Home/GetDateDB/
+        public ActionResult GetBook(int id)
+        {
+            Book b = bd.Books.Find(id);
+
+            if (b== null)
+            {
+                return HttpNotFound(); // возращаем ошибку
+            }
+            ViewBag.Temp = "Ваш поисковый результат \n";
+            return View(b);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            bd.Dispose();
+            base.Dispose(disposing);
+        }
 
     }
 }
