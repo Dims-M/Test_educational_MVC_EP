@@ -112,15 +112,15 @@ namespace Test_educational_MVC_EP.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         /// 
-        [HttpGet]
-        public ActionResult GetBook()
-        {
+       
+        //public ActionResult GetBook()
+        //{
 
-            return View();
-        }
+        //    return View();
+        //}
 
         // Home/GetBook/
-       [HttpPost]
+      
         public ActionResult GetBook(int id)
         {
             Book b = bd.Books.Find(id);
