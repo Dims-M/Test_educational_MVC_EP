@@ -181,6 +181,7 @@
     <Content Include="Views\Home\Plug.cshtml" />
     <Content Include="Views\Home\GetBook.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\DeleteConfirmed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

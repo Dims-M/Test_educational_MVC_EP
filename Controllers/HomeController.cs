@@ -133,6 +133,57 @@ namespace Test_educational_MVC_EP.Controllers
             return View(b);
         }
 
+        /// <summary>
+        /// "Экшен(метод) для удаления ненужной страници(записи в БД)
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        //public ActionResult Delete(int id)
+        //{
+        //    //модель
+        //    Book b = bd.Books.Find(id);
+
+        //    if (b != null)
+        //    {
+        //        bd.Books.Remove(b); // удаляем строку из бд
+        //        bd.SaveChanges();
+
+        //    }
+
+        //    return RedirectToAction("Index"); //после удаления перенаправляем на главное окно.
+        //}
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            //модель
+            Book b = bd.Books.Find(id);
+
+            if (b != null)
+            {
+
+                return HttpNotFound();
+            }
+            return View();
+        }
+
+
+        [HttpPost,ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            //модель
+            Book b = bd.Books.Find(id);
+
+            if (b != null)
+            {
+
+                return HttpNotFound();
+            }
+
+            bd.Books.Remove(b); // удаляем строку из бд
+            bd.SaveChanges();
+            return RedirectToAction("Index"); //после удаления перенаправляем на главное окно.
+        }
+
         protected override void Dispose(bool disposing)
         {
             bd.Dispose();
