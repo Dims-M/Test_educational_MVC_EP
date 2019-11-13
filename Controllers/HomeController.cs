@@ -57,6 +57,7 @@ namespace Test_educational_MVC_EP.Controllers
         }
 
         //тестовой метод гет id
+        //*************
 
         [HttpGet] //получаем форму для добавления новой книги.
         public ActionResult Create()
@@ -68,6 +69,7 @@ namespace Test_educational_MVC_EP.Controllers
         public ActionResult Create(Book book)
         {
             bd.Books.Add(book); //записываев в БД новую книгу
+            bd.SaveChanges();
             return RedirectToAction("Index"); //переодрисация на главную страницу
         }
         public ActionResult About()
@@ -103,19 +105,22 @@ namespace Test_educational_MVC_EP.Controllers
             }
 
         }
-        ///Home/GetDateDB
+        ///Home/GetBook
         /// <summary>
         /// Работа с БД
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public ActionResult GetDateDB()
+        /// 
+        [HttpGet]
+        public ActionResult GetBook()
         {
 
-            return View("/Home/Plug");
+            return View();
         }
 
-       // Home/GetDateDB/
+        // Home/GetBook/
+       [HttpPost]
         public ActionResult GetBook(int id)
         {
             Book b = bd.Books.Find(id);
